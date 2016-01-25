@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Wikitude SDK Android 5.1.1 Documentation</title>
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/docs.css">
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="css/github.min.css">
+    <link type="text/css" rel="stylesheet" href="css/default.min.css">
+    <link type="text/css" rel="stylesheet" href="css/lightbox.min-0.5.1.css">
+    <link type="text/css" rel="stylesheet" href="css/jquery.treemenu.css">
+
+    
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/highlight-8.6.min.js"></script>
+    <script type="text/javascript" src="js/lunr.min-0.5.11.js"></script>
+    <script type="text/javascript" src="js/deprecated.js"></script>
+    <script type="text/javascript" src="js/lightbox.min-0.5.1.js"></script>
+    <script type="text/javascript" src="js/jquery.treemenu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Every image referenced from a Markdown document
+            $("#content img").each(function() {
+                // Let's put a caption if there is one
+                if($(this).attr("alt"))
+                    $(this).wrap('<figure class="image"></figure>')
+                        .after('<figcaption>'+$(this).attr("alt")+'</figcaption>');
+                });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if(isVersionDeprecated())
+                document.getElementById('deprecatedNote').style.display='block';
+                document.getElementById("documentationSelect").onchange = function() {
+                var selectedOption = this.value;
+                 console.log(selectedOption);
+                 window.top.location.href = "http://www.wikitude.com/developer/documentation/" + selectedOption;
+                }
+        });
+    </script>
+
+</head>
+<body>
+    <div id="page">
+        <a name="top" />
+         
+
+<div id="sidebar">
+    <div id="topnav">
+    <img src="images/150610_WT_SDK_Logo.png">
+    <h1><a href="">Documentation</a></h1>
+    <h2>Wikitude SDK Android</h2>
+    
+    <div id="version">version: 5.1.1</div>
+    
+
+    
+    <select id="documentationSelect">
+        
+            <option value="android"  selected > Android </option>
+        
+            <option value="androidnative"  > Android Native API </option>
+        
+            <option value="phonegap"  > Cordova </option>
+        
+            <option value="epson"  > Epson </option>
+        
+            <option value="ios"  > iOS </option>
+        
+            <option value="iosnative"  > iOS Native API </option>
+        
+            <option value="glass"  > Google Glass </option>
+        
+            <option value="vuzix"  > Vuzix </option>
+        
+            <option value="htmlcss"  > Web </option>
+        
+            <option value="titanium"  > Titanium </option>
+        
+            <option value="unity"  > Unity </option>
+        
+            <option value="xamarin"  > Xamarin </option>
+        
+            <option value=""  > --- </option>
+        
+            <option value="cloudrecognition"  > Cloud Recognition </option>
+        
+            <option value="targetsapi"  > Targets API </option>
+        
+    </select>
+    
+
+    <div id="deprecatedNote" class="warning" style="display:none;">Note you are viewing the documentation of a deprecated version. Please check <a href="http://www.wikitude.com/developer/documentation">www.wikitude.com/developer/documentation</a></div>
+
+    </div>
+
+    <input id="showNav" class="toggleNav" type="checkbox">
+    <label class="showNavLbl" for="showNav">Show Navigation</label>
+    <label class="hideNavLbl" for="showNav">Hide Navigation</label>
+
+    <div id="mainnav">
+    <form action="search.html"><input id="search" type="text" placeholder="Search documentation" name="q" /></form>
+    <nav id="toc">
+        
+    <ul>
+    
+        <li>
+            <a href="gettingstartedandroid.html#getting-started">Getting started</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="setupguideandroid.html#setup-guide-android">Setup Guide Android</a>
+            
+        </li>
+    
+        <li>
+            <a href="supporteddevicesandroid.html#supported-android-devices">Supported Android Devices</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#how-to-obtain-a-free-trial-license">How to obtain a free trial license</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#where-should-i-enter-the-license-key">Where should I enter the license key</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="samples.html#examples">Examples</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="clientrecognition.html#client-recognition">Client Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognition.html#cloud-recognition">Cloud Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dmodels.html#3d-models">3D Models</a>
+            
+        </li>
+    
+        <li>
+            <a href="poi.html#point-of-interest-poi">Point Of Interest (POI)</a>
+            
+        </li>
+    
+        <li>
+            <a href="retrievingpoidata.html#retrieving-poi-data">Retrieving POI Data</a>
+            
+        </li>
+    
+        <li>
+            <a href="browsingpois.html#browsing-pois">Browsing POIs</a>
+            
+        </li>
+    
+        <li>
+            <a href="video.html#video-drawables">Video Drawables</a>
+            
+        </li>
+    
+        <li>
+            <a href="2dtrackingandgeo.html#combine-client-recognition-and-pois">Combine Client Recognition and POIs</a>
+            
+        </li>
+    
+        <li>
+            <a href="solarsystemir.html#solar-system-ir">Solar System (IR)</a>
+            
+        </li>
+    
+        <li>
+            <a href="solarsystemgeo.html#solar-system-geo">Solar System (Geo)</a>
+            
+        </li>
+    
+        <li>
+            <a href="hardwarecontrol.html#hardware-control">Hardware control</a>
+            
+        </li>
+    
+        <li>
+            <a href="pluginsapi.html#plugins-api">Plugins API</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetimages.html#target-images">Target Images</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#wikitude-cloud-recognition">Wikitude Cloud Recognition</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#general-definitions">General Definitions</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#getting-started-with-the-cloud-recognition-service">Getting Started with the Cloud Recognition Service</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#authentication">Authentication</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#quota-and-limits">Quota and Limits</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#your-first-target-collections">Your first Target Collections</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#add-target-images">Add Target Images</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-cloud-archive">Generate a Cloud Archive</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-wtc-file">Generate a WTC file</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#additional-calls">Additional calls</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="workflow.html#development-workflow">Development Workflow</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="workflow.html#code-test-debug">Code, Test, Debug</a>
+            
+        </li>
+    
+        <li>
+            <a href="workflow.html#on-device-debugging">On-Device Debugging</a>
+            
+        </li>
+    
+        <li>
+            <a href="assetsworkflow.html#3d-assets-workflow">3D Assets Workflow</a>
+            
+        </li>
+    
+        <li>
+            <a href="assetsworkflow.html#good-practice">Good practice</a>
+            
+        </li>
+    
+        <li>
+            <a href="assetsworkflow.html#working-with-3d-animations">Working with 3D Animations</a>
+            
+        </li>
+    
+        <li>
+            <a href="workingwithvideos.html#augmented-reality-videos">Augmented reality videos</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="tools.html#tools">Tools</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="ade.html#ade">ADE</a>
+            
+        </li>
+    
+        <li>
+            <a href="logger.html#logger">Logger</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetmanagement.html#target-management">Target Management</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetguide.html#best-practice-for-target-images">Best practice for target images</a>
+            
+        </li>
+    
+        <li>
+            <a href="encoder.html#wikitude-3d-encoder">Wikitude 3D Encoder</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroid.html#reference">Reference</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="referenceandroid.html#android-javadocs">Android JavaDocs</a>
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroid.html#javascript-api">JavaScript API</a>
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroid.html#cloud-recognition-manager-api">Cloud Recognition Manager API</a>
+            
+        </li>
+    
+        <li>
+            <a href="sdu-dbs.html#sdu-and-dbs">SDU and DBS</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migration">Migration</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="migration.html#migrate-from-41-to-50">Migrate from 4.1 to 5.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-40-to-41">Migrate from 4.0 to 4.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-33-to-40">Migrate from 3.3 to 4.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-32-to-33">Migrate from 3.2 to 3.3</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-31-to-32">Migrate from 3.1 to 3.2</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-30-to-31">Migrate from 3.0 to 3.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-20-to-30">Migrate from 2.0 to 3.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#upgrading-targets-for-sdk-41">Upgrading targets for SDK 4.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrating-targets-from-sdk-1x">Migrating targets from SDK 1.x</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-android-release-notes">Wikitude SDK Android Release Notes</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-5">Wikitude SDK 5</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-41">Wikitude SDK 4.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-40">Wikitude SDK 4.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-33">Wikitude SDK 3.3</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-32">Wikitude SDK 3.2</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-31">Wikitude SDK 3.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-30">Wikitude SDK 3.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-20">Wikitude SDK 2.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-12">Wikitude SDK 1.2</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-11">Wikitude SDK 1.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-10">Wikitude SDK 1.0</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+</ul>
+
+    </nav>
+    
+    <nav id="links">
+        <ul>
+            
+        </ul>
+    </nav>
+    
+    </div>
+</div>
+        <div id="content">
+            <h1 id="wikitude-sdk-android-release-notes">Wikitude SDK Android Release Notes</h1>
+<h2 id="wikitude-sdk-5">Wikitude SDK 5</h2>
+<h3 id="wikitude-sdk-5-1-1">Wikitude SDK 5.1.1</h3>
+<p>Release Date: 12.01.2016</p>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Missing textures on certain 3D models</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Wikitude Sample App now implements Android Runtime Permissions (applies to Android 6.0 - API level 23)</li>
+</ul>
+<h3 id="wikitude-sdk-5-1-0">Wikitude SDK 5.1.0</h3>
+<p>Release Date: 01.12.2015</p>
+<h4 id="new">New</h4>
+<ul>
+<li>Support for Android switched camera on Nexus 5X</li>
+<li>Support multiple regional co-located cloud recognition services</li>
+<li>3D model import: account for pivot node transformations</li>
+</ul>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>3D model import: <ul>
+<li>Animation grouping</li>
+<li>Account for animation stack (numbering of animations if more than one animation tracks are on the FBX animation stack)</li>
+<li>Accept the first texture of a multi-textured 3d model</li>
+<li>Accept 3d models with more than one mesh skins per node</li>
+</ul>
+</li>
+</ul>
+<h3 id="wikitude-sdk-5-0-0">Wikitude SDK 5.0.0</h3>
+<p>Release Date: 27.08.2015</p>
+<h4 id="new">New</h4>
+<ul>
+<li>Extended Tracking</li>
+<li>Plugins API</li>
+<li>Full Android Studio setup and support</li>
+<li>Unity Plugin</li>
+<li>Native API </li>
+</ul>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Potential problem with 3D special effects causing crashes</li>
+<li>Potential problem when calling <code>trackable.drawables.addCamDrawable()</code> while snapping is active</li>
+<li>Wrong log messages for connection not found</li>
+<li>Potential problem when clicking parts of a 3D model</li>
+<li>Potential problem when 3D models are re-loaded fast</li>
+<li>Potential memory increase with certain 3D models</li>
+<li>Problem when at the same time addCamDrawable is called in the onExitFieldOfVision event</li>
+<li>Potential problem with texture rendering when clicking a button</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Newest version of 3D rendering engine</li>
+</ul>
+<h4 id="removed">Removed</h4>
+<ul>
+<li>Official support for Android version lower than Android 4.0</li>
+</ul>
+<h2 id="wikitude-sdk-4-1">Wikitude SDK 4.1</h2>
+<h3 id="wikitude-sdk-4-1-1">Wikitude SDK 4.1.1</h3>
+<p>Release Date: 27.04.2015</p>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Missing QT 5 .dll&#39;s for Windows 3D Encoder</li>
+<li>AR.Model <code>onError</code> handler now has more details about what failed</li>
+<li>Loading of <a href="../Reference/JavaScript%20API/classes/ClientTracker.html"><code>ClientTracker</code></a> works as expected when no <code>onLoaded</code> trigger is set</li>
+<li>Documentation clarifications and fixes </li>
+<li>Updated Terms of Service</li>
+</ul>
+<h3 id="wikitude-sdk-4-1-0">Wikitude SDK 4.1.0</h3>
+<p>Release Date: 03.03.2015</p>
+<h4 id="new">New</h4>
+<ul>
+<li>Access to the device front cam through a JavaScript API and the native SDK</li>
+<li>Hardware access API for advanced camera features (zoom, focus)</li>
+<li>Native support for 64-bit ARM devices</li>
+<li>Information about distance to the image target</li>
+<li>Click on 3D model now returns mesh part</li>
+<li>Updated sample app</li>
+<li><code>CloudTracker</code> for cloud recognition support</li>
+<li>API changes<ul>
+<li>moved all initialization parameters to new class <code>StartupConfiguration</code></li>
+<li>renamed <code>ARMode</code> to <code>Features</code></li>
+<li>uniform naming convention of API methods on all platforms  </li>
+</ul>
+</li>
+</ul>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Potential problem when deleting large <code>.wtc</code> files</li>
+<li><code>onSnappedToScreen</code> function is not called when using the <code>enabledOnExitFieldOfVision</code> property</li>
+<li>3D Model with animation not clickable</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Performance of Image Recognition initial recognition phase</li>
+<li>Tracking Performance optimized and streamlined</li>
+</ul>
+<h2 id="wikitude-sdk-4-0">Wikitude SDK 4.0</h2>
+<h3 id="wikitude-sdk-4-0-3-drc">Wikitude SDK 4.0.3 DRC</h3>
+<p>Release Date: 25.11.14</p>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Race condition on ArchitectView startup (leading to crash) when Javascript command are issued before the main HTML is loaded.</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Better handling of AR worlds containing more VideoDrawables.</li>
+</ul>
+<h3 id="wikitude-sdk-4-0-3">Wikitude SDK 4.0.3</h3>
+<p>Release Date: 28.10.14</p>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Compatibility with Android 5.0</li>
+</ul>
+<h3 id="wikitude-sdk-4-0-2">Wikitude SDK 4.0.2</h3>
+<p>Release Date: 09.10.14</p>
+<h4 id="new">New</h4>
+<ul>
+<li>Android L compliance, according to the new guidelines</li>
+<li>AR Mode configurable on startup (default is IR+Geo)</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Image target recognition</li>
+<li>Optimized SDK for Android 2.3+ by removing fallbacks for older Android versions</li>
+</ul>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Fixes an issue with flickering augmentations for certain image targets</li>
+<li>Fixes an issue where the &#39;onSnappedToScreen&#39; function was not called when using the &#39;enabledOnExitFieldOfVision&#39; property</li>
+<li>It is safe to call normal lifecycle events of the ARchitectView even if initialization fails</li>
+<li>ARchitect WebView lifecycle doesn&#39;t interfere with other WebViews in the same application</li>
+</ul>
+<h3 id="wikitude-sdk-4-0-1">Wikitude SDK 4.0.1</h3>
+<p>Release Date: 07.08.14</p>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Fixes Videodrawable crash related to code obfuscation when creating a Play Store application</li>
+<li>Fixes Videodrawable loop behaviour on Samsung devices.</li>
+</ul>
+<h3 id="wikitude-sdk-4-0-0">Wikitude SDK 4.0.0</h3>
+<p>Release Date: 29.07.14</p>
+<h4 id="new">New</h4>
+<ul>
+<li>Support for x86 architecture</li>
+<li>&quot;Snap-to-screen&quot; feature (see samples <a href="3dmodels.html#snapToScreen">3D Model</a> and <a href="video.html#snappedvideo">Video</a> for implementation)</li>
+<li>Wildcard support for the <a href="../Reference/JavaScript%20API/classes/Trackable2DObject.html#property_targetName"><code>targetName</code></a> property of <a href="../Reference/JavaScript%20API/classes/Trackable2DObject.html"><code>Trackable2DObject</code></a></li>
+<li>New tracking engine with increased performance </li>
+<li>Control flash light from augmented reality scene (<a href="../Reference/JavaScript%20API/classes/context.html#property_hardware.flashlight"><code>AR.context.hardware.flashlight</code></a>)</li>
+<li>SDK version number is now accessible from JS (<a href="../Reference/JavaScript%20API/classes/context.html#property_versionNumber"><code>AR.context.versionNumber</code></a>)</li>
+<li>Updates OpenSSL version to 1.0.1h</li>
+<li>Required license key</li>
+</ul>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>A potential issue that caused rendering artifacts when objects were created outside of the current culling distance</li>
+<li>Fixes a problem with wrong camera orientation</li>
+<li>Fixes various problems with VideoDrawables</li>
+<li>Fixes a potential issue with 3D models that were not deleted correctly from a temporary directory</li>
+<li>Fixes a potential issue with 3D models that were not destroyed correctly when using the JS <code>destroy()</code> API</li>
+<li>Transparent videos on PowerVR SGX 540 devices</li>
+<li>Can load the same 3D model more than once</li>
+<li>VideoDrawables crash on pause / resume</li>
+<li>Load and show more than one video in a single AR world</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Samples to reflect Snap-to-screen feature and wildcard support</li>
+<li>Comments in sample apps source code</li>
+</ul>
+<h2 id="wikitude-sdk-3-3">Wikitude SDK 3.3</h2>
+<h3 id="wikitude-sdk-3-3-2">Wikitude SDK 3.3.2</h3>
+<p>Release Date: 29.07.14</p>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Fixes various problems with VideoDrawables</li>
+<li>Fixes a potential issue with 3D models that were not deleted correctly from a temporary directory</li>
+<li>Updates OpenSSL version to 1.0.1h</li>
+<li>Transparent videos on PowerVR SGX 540 devices</li>
+<li>Can load the same 3D model more than once</li>
+<li>VideoDrawables crash on pause / resume</li>
+<li>Load and show more than one video in a single AR world</li>
+</ul>
+<h3 id="wikitude-sdk-3-3-1">Wikitude SDK 3.3.1</h3>
+<p>Release Date: 24.04.2014</p>
+<h4 id="new">New</h4>
+<ul>
+<li>Listener for PageLoaded Event</li>
+</ul>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Possible memory allocation issues during application close</li>
+<li>Possible error where screenshot was not captured</li>
+<li>Crash when exiting and reentering the same architect world</li>
+<li>Some PNG images couldn&#39;t be loaded</li>
+</ul>
+<h3 id="wikitude-sdk-3-3-0">Wikitude SDK 3.3.0</h3>
+<p>Release Date: 01.04.2014</p>
+<h4 id="new">New</h4>
+<ul>
+<li>Multiple AR views supported</li>
+<li>URL scheme support for <code>tel:</code>, <code>sms:</code> and <code>mailto:</code></li>
+<li>Scaling mode: Global Scene (See <a href="../Reference/JavaScript%20API/classes/context.html">JavaScript API Reference</a>for more details)</li>
+<li>Method getSupportedARModeForDevice to retrieve suitable AR mode for device</li>
+</ul>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>JavaScript error reported at start-up (Uncaught ReferenceError)</li>
+<li>Possible mix-up of 3D textures with the same name in different 3D models</li>
+<li>Possible exception when using Video Drawable (ConcurrentModificationException) fixed</li>
+<li>Possible crash when sending app to background and back when playing video</li>
+<li>Loading of worlds from SD card on Android 3.0 (and earlier) and sound loading from SD card</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Camera View on low-end devices</li>
+<li>Injection of JavaScript API on Android 3.0+</li>
+<li>Compatibility with Android 4.4 and SDK 19</li>
+</ul>
+<h2 id="wikitude-sdk-3-2">Wikitude SDK 3.2</h2>
+<h3 id="wikitude-sdk-3-2-1">Wikitude SDK 3.2.1</h3>
+<p>Release Date: 04.12.2013</p>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Compilation error preventing gif files to be shown in AR scene</li>
+<li>Animation loops of 3D models</li>
+<li>onError trigger not called for images in not supported format</li>
+<li>Rare cases where Android UI becomes unresponsive when opening an activity on top of Wikitude SDK</li>
+</ul>
+<h3 id="wikitude-sdk-3-2-0">Wikitude SDK 3.2.0</h3>
+<p>Release Date: 10.10.2013</p>
+<h4 id="new">New</h4>
+<ul>
+<li>VideoDrawables to display videos on top of image targets or as part of <code>GeoObjects</code></li>
+<li>Taking screenshot of AR scene</li>
+<li>Examples for VideoDrawables</li>
+</ul>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li><code>AR.context.startVideoPlayer</code> was unable to play videos from asset folder</li>
+<li>ADE.js interfered with architect.js under certain circumstances when loaded from bundle/assets</li>
+<li>Rare case of crashing in <code>onDestroy</code></li>
+<li>Under certain circumstances the sensors where not paused </li>
+<li>Camera uses auto focus for better recognition performance</li>
+<li>Fixed loading worlds from any source</li>
+<li>Changing viewport of HTML drawable after creation results in crash</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Resource loading and caching of images, 3D models and tracker files</li>
+<li>Images can be loaded from any source</li>
+<li>Loading time of image recognition tracker</li>
+<li>Radar position and size is now defined as a DOM element (e.g. div-tag styled in CSS). That way you can define scale and position in HTML instead of defining offsets in SDU unit.</li>
+<li>Browse POI samples</li>
+</ul>
+<h2 id="wikitude-sdk-3-1">Wikitude SDK 3.1</h2>
+<h3 id="wikitude-sdk-3-1-0">Wikitude SDK 3.1.0</h3>
+<p>Release Date: 27.08.2013</p>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Problem with included ade.js on device interfered with ARchitect API</li>
+<li>AnimatedImageDrawable&#39;s frame rate was ignored after resume.</li>
+<li>Executing onDocumentLocationChanged trigger for HTML Drawable in ADE was broken.</li>
+<li>Under certain circumstances SDK didn&#39;t pause when switched to background.</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>HTML Drawables work correctly with dynamic content</li>
+<li>Image detection two times faster</li>
+<li>Better support for target images with low contrast</li>
+<li>More reliable tracking, especially for difficult target images</li>
+<li>Optimized texture memory usage for non square images</li>
+</ul>
+<h2 id="wikitude-sdk-3-0">Wikitude SDK 3.0</h2>
+<h3 id="wikitude-sdk-3-0-1">Wikitude SDK 3.0.1</h3>
+<p>Release Date: 25.07.2013</p>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Orientation issue for Android tablets</li>
+</ul>
+<h3 id="wikitude-sdk-3-0-0">Wikitude SDK 3.0.0</h3>
+<p>Release Date: 18.06.2013</p>
+<h4 id="new">New</h4>
+<ul>
+<li>Integrated image recognition and tracking engine</li>
+<li>Examples application</li>
+<li>Support for 3D model animations</li>
+<li>Support for transparent materials, textures and colors on 3D models</li>
+<li>API method for setting distance based scaling parameters. See reference on AR.context.scene</li>
+</ul>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Under certain circumstances the light of a 3D model was ignored</li>
+<li>Issue when locking screen and radar is visible</li>
+<li>Possible crash when using wrong license key</li>
+<li>Possible crash when returning to an ArchitectView that uses HTMLDrawables</li>
+<li>Aspect ratio in camera for devices with image recognition capability</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Image recognition supports up to 1000 targets</li>
+<li>Rewritten, extended and improved SDK documentation.</li>
+<li>Significant increase of performance at start up and general performance increase</li>
+<li>Minor fixes</li>
+</ul>
+<h4 id="removed">Removed</h4>
+<ul>
+<li>Support for Vuforia SDK</li>
+</ul>
+<h2 id="wikitude-sdk-2-0">Wikitude SDK 2.0</h2>
+<h3 id="wikitude-sdk-2-0-0">Wikitude SDK 2.0.0</h3>
+<p>Release Date: 26.02.2013</p>
+<h4 id="new">New</h4>
+<ul>
+<li>Support for 3D models via new ARchitect class Model </li>
+</ul>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Missing SD card prevented image recognition from running successfully.</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Minor fixes and performance improvements</li>
+</ul>
+<h2 id="wikitude-sdk-1-2">Wikitude SDK 1.2</h2>
+<h3 id="wikitude-sdk-1-2-0">Wikitude SDK 1.2.0</h3>
+<p>Release Date: 18.12.2012</p>
+<h4 id="new">New</h4>
+<ul>
+<li>Improved bridge performance (SteelBridge and Weasel)</li>
+<li>onFinish trigger for AnimatedImageDrawables</li>
+<li>ImageResource onLoad() reports width and height of loaded image</li>
+<li>PropertyAnimation can be paused and resumed</li>
+<li>Customize clicking behavior (click, touch down, touch up)</li>
+<li>Set culling distance from JavaScript</li>
+<li>Support for Vuforia SDK v2.0</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Architect Desktop Engine (ADE) now overlays world</li>
+</ul>
+<h2 id="wikitude-sdk-1-1">Wikitude SDK 1.1</h2>
+<h3 id="wikitude-sdk-1-1-1">Wikitude SDK 1.1.1</h3>
+<p>Release Date: 26.09.2012</p>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Possible crash when using openInBrowser or startVideoPlayer while IR is active</li>
+<li>Possible crash when calling start / stop while IR is active</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>Minor performance increase for rendering HTML drawables.</li>
+<li>Handling of images with semi transparency</li>
+</ul>
+<h3 id="wikitude-sdk-1-1-0">Wikitude SDK 1.1.0</h3>
+<p>Release Date: 16.08.2012</p>
+<h4 id="new">New</h4>
+<ul>
+<li>HTML Drawables </li>
+<li>Relative locations </li>
+<li>Customizable AR radar</li>
+<li>Sprite Animations</li>
+<li>3D Transformation</li>
+<li>Animation Groups</li>
+<li>Extension for Qualcomm Vuforia SDK for Image Recognition</li>
+<li>Possibility to turn off camera and sensors</li>
+<li>Possibility to add a single drawable to multiple GeoObjects</li>
+</ul>
+<h4 id="improved">Improved</h4>
+<ul>
+<li>New tutorials and snippets</li>
+<li>Library Reference examples and texts</li>
+<li>New simple IR example</li>
+<li>Streamlined trigger properties</li>
+<li>Rendering performance in general</li>
+<li>Performance of AR.logger output on device</li>
+</ul>
+<h2 id="wikitude-sdk-1-0">Wikitude SDK 1.0</h2>
+<h3 id="wikitude-sdk-1-0-5">Wikitude SDK 1.0.5</h3>
+<h4 id="new">New</h4>
+<ul>
+<li>Added setCullingDistance to ArchitectView (SDK)</li>
+<li>Added possibility for better error handling when loading an ARchitect World (SDK)</li>
+<li>Improved SimpleARBrowser example</li>
+</ul>
+<h4 id="note">Note</h4>
+<ul>
+<li>Including a viewport meta-tag in your ARchitect World is recommended if you target different screen resolutions (see ARchitectTools/Hello World/Hello World.html for more details)</li>
+</ul>
+<h3 id="wikitude-sdk-1-0-4">Wikitude SDK 1.0.4</h3>
+<ul>
+<li>Licensable SDK</li>
+</ul>
+<h3 id="wikitude-sdk-1-0-3">Wikitude SDK 1.0.3</h3>
+<ul>
+<li>Initial Public SDK Release</li>
+</ul>
+
+            <footer id="footer">
+                &copy; 2012 -2015 <a href="http://www.wikitude.com">Wikitude GmbH</a> · <a href="http://www.wikitude.com/imprint">Imprint</a>
+            </footer>  
+        </div>    
+    </div>
+
+    <!-- TO DO: Reactivate when problems with nav are fixed
+    <script>
+    $(function(){
+            $("#toc ul").treemenu({delay:300}).openActive();
+        });
+    </script>
+    -->
+
+</body>
+    <script>
+    var lightbox = new Lightbox();
+    lightbox.load();
+    </script>
+
+</html>

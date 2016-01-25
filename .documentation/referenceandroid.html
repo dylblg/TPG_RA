@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Wikitude SDK Android 5.1.1 Documentation</title>
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/docs.css">
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="css/github.min.css">
+    <link type="text/css" rel="stylesheet" href="css/default.min.css">
+    <link type="text/css" rel="stylesheet" href="css/lightbox.min-0.5.1.css">
+    <link type="text/css" rel="stylesheet" href="css/jquery.treemenu.css">
+
+    
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/highlight-8.6.min.js"></script>
+    <script type="text/javascript" src="js/lunr.min-0.5.11.js"></script>
+    <script type="text/javascript" src="js/deprecated.js"></script>
+    <script type="text/javascript" src="js/lightbox.min-0.5.1.js"></script>
+    <script type="text/javascript" src="js/jquery.treemenu.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Every image referenced from a Markdown document
+            $("#content img").each(function() {
+                // Let's put a caption if there is one
+                if($(this).attr("alt"))
+                    $(this).wrap('<figure class="image"></figure>')
+                        .after('<figcaption>'+$(this).attr("alt")+'</figcaption>');
+                });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if(isVersionDeprecated())
+                document.getElementById('deprecatedNote').style.display='block';
+                document.getElementById("documentationSelect").onchange = function() {
+                var selectedOption = this.value;
+                 console.log(selectedOption);
+                 window.top.location.href = "http://www.wikitude.com/developer/documentation/" + selectedOption;
+                }
+        });
+    </script>
+
+</head>
+<body>
+    <div id="page">
+        <a name="top" />
+         
+
+<div id="sidebar">
+    <div id="topnav">
+    <img src="images/150610_WT_SDK_Logo.png">
+    <h1><a href="">Documentation</a></h1>
+    <h2>Wikitude SDK Android</h2>
+    
+    <div id="version">version: 5.1.1</div>
+    
+
+    
+    <select id="documentationSelect">
+        
+            <option value="android"  selected > Android </option>
+        
+            <option value="androidnative"  > Android Native API </option>
+        
+            <option value="phonegap"  > Cordova </option>
+        
+            <option value="epson"  > Epson </option>
+        
+            <option value="ios"  > iOS </option>
+        
+            <option value="iosnative"  > iOS Native API </option>
+        
+            <option value="glass"  > Google Glass </option>
+        
+            <option value="vuzix"  > Vuzix </option>
+        
+            <option value="htmlcss"  > Web </option>
+        
+            <option value="titanium"  > Titanium </option>
+        
+            <option value="unity"  > Unity </option>
+        
+            <option value="xamarin"  > Xamarin </option>
+        
+            <option value=""  > --- </option>
+        
+            <option value="cloudrecognition"  > Cloud Recognition </option>
+        
+            <option value="targetsapi"  > Targets API </option>
+        
+    </select>
+    
+
+    <div id="deprecatedNote" class="warning" style="display:none;">Note you are viewing the documentation of a deprecated version. Please check <a href="http://www.wikitude.com/developer/documentation">www.wikitude.com/developer/documentation</a></div>
+
+    </div>
+
+    <input id="showNav" class="toggleNav" type="checkbox">
+    <label class="showNavLbl" for="showNav">Show Navigation</label>
+    <label class="hideNavLbl" for="showNav">Hide Navigation</label>
+
+    <div id="mainnav">
+    <form action="search.html"><input id="search" type="text" placeholder="Search documentation" name="q" /></form>
+    <nav id="toc">
+        
+    <ul>
+    
+        <li>
+            <a href="gettingstartedandroid.html#getting-started">Getting started</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="setupguideandroid.html#setup-guide-android">Setup Guide Android</a>
+            
+        </li>
+    
+        <li>
+            <a href="supporteddevicesandroid.html#supported-android-devices">Supported Android Devices</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#how-to-obtain-a-free-trial-license">How to obtain a free trial license</a>
+            
+        </li>
+    
+        <li>
+            <a href="triallicense.html#where-should-i-enter-the-license-key">Where should I enter the license key</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="samples.html#examples">Examples</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="clientrecognition.html#client-recognition">Client Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognition.html#cloud-recognition">Cloud Recognition</a>
+            
+        </li>
+    
+        <li>
+            <a href="3dmodels.html#3d-models">3D Models</a>
+            
+        </li>
+    
+        <li>
+            <a href="poi.html#point-of-interest-poi">Point Of Interest (POI)</a>
+            
+        </li>
+    
+        <li>
+            <a href="retrievingpoidata.html#retrieving-poi-data">Retrieving POI Data</a>
+            
+        </li>
+    
+        <li>
+            <a href="browsingpois.html#browsing-pois">Browsing POIs</a>
+            
+        </li>
+    
+        <li>
+            <a href="video.html#video-drawables">Video Drawables</a>
+            
+        </li>
+    
+        <li>
+            <a href="2dtrackingandgeo.html#combine-client-recognition-and-pois">Combine Client Recognition and POIs</a>
+            
+        </li>
+    
+        <li>
+            <a href="solarsystemir.html#solar-system-ir">Solar System (IR)</a>
+            
+        </li>
+    
+        <li>
+            <a href="solarsystemgeo.html#solar-system-geo">Solar System (Geo)</a>
+            
+        </li>
+    
+        <li>
+            <a href="hardwarecontrol.html#hardware-control">Hardware control</a>
+            
+        </li>
+    
+        <li>
+            <a href="pluginsapi.html#plugins-api">Plugins API</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetimages.html#target-images">Target Images</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#wikitude-cloud-recognition">Wikitude Cloud Recognition</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#general-definitions">General Definitions</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#getting-started-with-the-cloud-recognition-service">Getting Started with the Cloud Recognition Service</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#authentication">Authentication</a>
+            
+        </li>
+    
+        <li>
+            <a href="gettingstartedcloudrecognition.html#quota-and-limits">Quota and Limits</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#your-first-target-collections">Your first Target Collections</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#add-target-images">Add Target Images</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-cloud-archive">Generate a Cloud Archive</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#generate-a-wtc-file">Generate a WTC file</a>
+            
+        </li>
+    
+        <li>
+            <a href="cloudrecognitionworkflow.html#additional-calls">Additional calls</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="workflow.html#development-workflow">Development Workflow</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="workflow.html#code-test-debug">Code, Test, Debug</a>
+            
+        </li>
+    
+        <li>
+            <a href="workflow.html#on-device-debugging">On-Device Debugging</a>
+            
+        </li>
+    
+        <li>
+            <a href="assetsworkflow.html#3d-assets-workflow">3D Assets Workflow</a>
+            
+        </li>
+    
+        <li>
+            <a href="assetsworkflow.html#good-practice">Good practice</a>
+            
+        </li>
+    
+        <li>
+            <a href="assetsworkflow.html#working-with-3d-animations">Working with 3D Animations</a>
+            
+        </li>
+    
+        <li>
+            <a href="workingwithvideos.html#augmented-reality-videos">Augmented reality videos</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="tools.html#tools">Tools</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="ade.html#ade">ADE</a>
+            
+        </li>
+    
+        <li>
+            <a href="logger.html#logger">Logger</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetmanagement.html#target-management">Target Management</a>
+            
+        </li>
+    
+        <li>
+            <a href="targetguide.html#best-practice-for-target-images">Best practice for target images</a>
+            
+        </li>
+    
+        <li>
+            <a href="encoder.html#wikitude-3d-encoder">Wikitude 3D Encoder</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroid.html#reference">Reference</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="referenceandroid.html#android-javadocs">Android JavaDocs</a>
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroid.html#javascript-api">JavaScript API</a>
+            
+        </li>
+    
+        <li>
+            <a href="referenceandroid.html#cloud-recognition-manager-api">Cloud Recognition Manager API</a>
+            
+        </li>
+    
+        <li>
+            <a href="sdu-dbs.html#sdu-and-dbs">SDU and DBS</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migration">Migration</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="migration.html#migrate-from-41-to-50">Migrate from 4.1 to 5.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-40-to-41">Migrate from 4.0 to 4.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-33-to-40">Migrate from 3.3 to 4.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-32-to-33">Migrate from 3.2 to 3.3</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-31-to-32">Migrate from 3.1 to 3.2</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-30-to-31">Migrate from 3.0 to 3.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrate-from-20-to-30">Migrate from 2.0 to 3.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#upgrading-targets-for-sdk-41">Upgrading targets for SDK 4.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="migration.html#migrating-targets-from-sdk-1x">Migrating targets from SDK 1.x</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-android-release-notes">Wikitude SDK Android Release Notes</a>
+            
+                
+    <ul>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-5">Wikitude SDK 5</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-41">Wikitude SDK 4.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-40">Wikitude SDK 4.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-33">Wikitude SDK 3.3</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-32">Wikitude SDK 3.2</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-31">Wikitude SDK 3.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-30">Wikitude SDK 3.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-20">Wikitude SDK 2.0</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-12">Wikitude SDK 1.2</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-11">Wikitude SDK 1.1</a>
+            
+        </li>
+    
+        <li>
+            <a href="changelog.html#wikitude-sdk-10">Wikitude SDK 1.0</a>
+            
+        </li>
+    
+</ul>
+
+            
+        </li>
+    
+</ul>
+
+    </nav>
+    
+    <nav id="links">
+        <ul>
+            
+        </ul>
+    </nav>
+    
+    </div>
+</div>
+        <div id="content">
+            <h1 id="reference">Reference</h1>
+<h2 id="android-javadocs">Android JavaDocs</h2>
+<p>Go to <a href="../Reference/Android%20Architect%20SDK%20API/html/index.html">Android JavaDoc Reference</a> for a complete reference of all Android Wikitude API objects and functions.</p>
+<h2 id="javascript-api">JavaScript API</h2>
+<p>Go to <a href="../Reference/JavaScript%20API/index.html">JavaScript API Reference</a> for a complete reference of all JavaScript API objects and functions.</p>
+<h2 id="cloud-recognition-manager-api">Cloud Recognition Manager API</h2>
+<p>Go to <a href="../Reference/Cloud%20Recognition%20REST%20API/index.html">REST API Reference</a> for a complete reference of all REST API calls for the Manager API.</p>
+
+            <footer id="footer">
+                &copy; 2012 -2015 <a href="http://www.wikitude.com">Wikitude GmbH</a> · <a href="http://www.wikitude.com/imprint">Imprint</a>
+            </footer>  
+        </div>    
+    </div>
+
+    <!-- TO DO: Reactivate when problems with nav are fixed
+    <script>
+    $(function(){
+            $("#toc ul").treemenu({delay:300}).openActive();
+        });
+    </script>
+    -->
+
+</body>
+    <script>
+    var lightbox = new Lightbox();
+    lightbox.load();
+    </script>
+
+</html>
